@@ -2,6 +2,7 @@ const express = require('express');
 const dotenv = require('dotenv');
 const connectDB = require('./config/db');
 const userRoutes = require('./routes/userRoutes');
+const adminRoutes = require('./routes/adminRoutes');
 
 dotenv.config();  // Load environment variables
 
@@ -14,6 +15,7 @@ app.get("/",(req,res)=>{
     res.send("Server is running now!")
 })
 
+app.use('/api/admin', adminRoutes);
 app.use('/api/users', userRoutes);  // Mount user routes
 
 // MongoDB Connection
