@@ -11,7 +11,7 @@ const app = express();
 // Middleware to parse incoming JSON requests
 app.use(express.json());
 
-app.get("/",(req,res)=>{
+app.get("/", (req, res) => {
     res.send("Server is running now!")
 })
 
